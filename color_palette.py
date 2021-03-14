@@ -32,7 +32,6 @@ if choice == 'random':
 rgb = []
 hls = []
 hex_0 = []
-@st.cache(suppress_st_warning=True)
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
