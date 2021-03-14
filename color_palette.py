@@ -81,4 +81,4 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     
 image_display(choice)
 color_change(hls,1,1,1,6,'original colors')
-color_change(hls,1,1.5,1,6,'green hue colors')
+color_change(hls,2,1,1,6,'green hue colors')
