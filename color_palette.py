@@ -79,5 +79,5 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     #st.pyplot(new)
     
 image_display(choice)
-color_change(hls,1,1,1,6,'original colors')
+color_change(hls,1,1,1,3,'original colors')
 color_change(hls,0.5,1,1,6,'green hue colors')
