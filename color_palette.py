@@ -29,7 +29,6 @@ if choice == 'random':
         random_url += str(x)
     else:
         random_url = random_url
-@st.cache(suppress_st_warning=True)
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
@@ -57,6 +56,7 @@ def image_display(pic):
     #Alternate shades:
     new_rgb = []
     hex_1 = []
+    @st.cache(suppress_st_warning=True)
     def color_change(hls,hue_val,light_val,sat_val,num_colors):
         for i,x in enumerate(hls): 
             hls_div = tuple(h/255 for h in hls[i])
