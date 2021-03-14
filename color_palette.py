@@ -95,7 +95,7 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     og = sns.palplot(hex_1[:num_colors])
     st.write(string)
     st.pyplot(og)
-    
+
 image_display(choice)
 palette(hls,1,1,1,6,'original colors')
 color_change(hls,1.5,1,1,6,'green hue colors')
