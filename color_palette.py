@@ -54,7 +54,7 @@ def image_display(pic):
         hex_0.append('#%02x%02x%02x' % i)
 
 #Alternate shades:
-new_rgb = []
+new_rgb_1 = []
 hex_1 = []
 def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
@@ -68,14 +68,15 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
             x = int(x)
             rgb_test[i] = abs(x)
         rgb_test = tuple(rgb_test)
-        new_rgb.append(rgb_test)
-    for i in new_rgb:
+        new_rgb_1.append(rgb_test)
+    for i in new_rgb_1:
         hex_1.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_1[:num_colors])
     st.write(string)
     st.pyplot(og)
 
 hex_2 = []
+new_rgb_2 = []
 def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
@@ -88,8 +89,8 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
             x = int(x)
             rgb_test[i] = abs(x)
         rgb_test = tuple(rgb_test)
-        new_rgb.append(rgb_test)
-    for i in new_rgb:
+        new_rgb_2.append(rgb_test)
+    for i in new_rgb_2:
         hex_2.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_2[:num_colors])
     st.write(string)
