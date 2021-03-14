@@ -32,6 +32,7 @@ if choice == 'random':
 rgb = []
 hls = []
 hex_0 = []
+@st.cache(suppress_st_warning=True)
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
@@ -79,5 +80,4 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors):
     st.pyplot(new)
     
 image_display(choice)
-@st.cache(suppress_st_warning=True)
 color_change(hls,0.5,1,1,6)
