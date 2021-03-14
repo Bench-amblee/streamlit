@@ -57,7 +57,6 @@ def image_display(pic):
 new_rgb = []
 hex_1 = []
 def color_change(hls,hue_val,light_val,sat_val,num_colors):
-@st.cache(suppress_st_warning=True)
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
         rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
@@ -80,4 +79,5 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors):
     st.pyplot(new)
     
 image_display(choice)
+@st.cache(suppress_st_warning=True)
 color_change(hls,0.5,1,1,6)
