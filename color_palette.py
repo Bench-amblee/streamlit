@@ -56,7 +56,6 @@ def image_display(pic):
     #Alternate shades:
     new_rgb = []
     hex_1 = []
-    @st.cache(suppress_st_warning=True)
     def color_change(hls,hue_val,light_val,sat_val,num_colors):
         for i,x in enumerate(hls): 
             hls_div = tuple(h/255 for h in hls[i])
@@ -71,7 +70,8 @@ def image_display(pic):
             rgb_test = tuple(rgb_test)
             new_rgb.append(rgb_test)
         for i in new_rgb:
-            hex_1.append('#%02x%02x%02x' % i)  
+            hex_1.append('#%02x%02x%02x' % i)
+        @st.cache(suppress_st_warning=True)
         og = sns.palplot(hex_0[:num_colors])
         st.write('original colors')
         st.pyplot(og)
