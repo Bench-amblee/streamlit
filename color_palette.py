@@ -56,7 +56,7 @@ def image_display(pic):
 #Alternate shades:
 new_rgb = []
 hex_1 = []
-def color_change(hls,hue_val,light_val,sat_val,num_colors):
+def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
         rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
@@ -72,11 +72,11 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors):
     for i in new_rgb:
         hex_1.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_0[:num_colors])
-    st.write('original colors')
+    st.write(string)
     st.pyplot(og)
-    new = sns.palplot(hex_1[:num_colors])
-    st.write('hue shift')
-    st.pyplot(new)
+    #new = sns.palplot(hex_1[:num_colors])
+    #st.write('hue shift')
+    #st.pyplot(new)
     
 image_display(choice)
-color_change(hls,0.5,1,1,6)
+color_change(hls,0.5,1,1,6,'original colors')
