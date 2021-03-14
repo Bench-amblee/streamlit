@@ -71,7 +71,7 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
         new_rgb.append(rgb_test)
     for i in new_rgb:
         hex_1.append('#%02x%02x%02x' % i)
-    og = sns.palplot(hex_0[:num_colors])
+    og = sns.palplot(hex_1[:num_colors])
     st.write(string)
     st.pyplot(og)
     #new = sns.palplot(hex_1[:num_colors])
