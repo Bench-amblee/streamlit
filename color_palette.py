@@ -76,6 +76,7 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     st.write(string)
     st.pyplot(og)
 
+hex_2 = []
 def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
@@ -91,7 +92,7 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
         new_rgb.append(rgb_test)
     for i in new_rgb:
         
-        hex_1.append('#%02x%02x%02x' % i)
+        hex_2.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_1[:num_colors])
     st.write(string)
     st.pyplot(og)
