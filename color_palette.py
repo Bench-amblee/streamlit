@@ -56,8 +56,8 @@ def image_display(pic):
 #Alternate shades:
 new_rgb = []
 hex_1 = []
-@st.cache(suppress_st_warning=True)
 def color_change(hls,hue_val,light_val,sat_val,num_colors):
+    @st.cache(suppress_st_warning=True)
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
         rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
