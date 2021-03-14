@@ -67,8 +67,8 @@ def image_display(pic):
         st.write('original colors')
         st.pyplot(og)
         new = sns.palplot(hex_1[:num_colors])
-        st.write('light color shift')
+        st.write('hue shift')
         st.pyplot(new)
-    color_change(hls,1,1.2,1.2,6)
+    color_change(hls,0.5,1,1,6)
 
 image_display(choice)
