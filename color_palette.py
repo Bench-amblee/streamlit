@@ -78,5 +78,6 @@ def image_display(pic):
         st.write('hue shift')
         st.pyplot(new)
     color_change(hls,0.5,1,1,6)
+    
 @st.cache(suppress_st_warning=True)
 image_display(choice)
