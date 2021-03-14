@@ -29,6 +29,7 @@ if choice == 'random':
         random_url += str(x)
     else:
         random_url = random_url
+@st.cache(suppress_st_warning=True)
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
