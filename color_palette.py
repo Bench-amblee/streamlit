@@ -1,6 +1,7 @@
 from PIL import Image
 from collections import Counter
 from PIL import Image
+from urllib.request import urlopen
 import seaborn as sns
 import colorgram
 import colorsys
@@ -11,8 +12,10 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
+random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
+random = Image.open(urlopen(random_url))
 
-images = {'forest': image1,'sunset':image2,'coffee':image3}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random}
 
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
