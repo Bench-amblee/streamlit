@@ -76,7 +76,7 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     st.write(string)
     st.pyplot(og)
 
-def color_palette(hls,hue_val,light_val,sat_val,num_colors,string):
+def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
         rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
