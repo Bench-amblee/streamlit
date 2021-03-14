@@ -1,2 +1,2 @@
 seaborn == 0.11.1
-colorgram == 1.2.0
+colorgram.py == 1.2.0
