@@ -29,11 +29,13 @@ if choice == 'random':
         random_url += str(x)
     else:
         random_url = random_url
+rgb = []
+hls = []
+hex_0 = []
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
     colors = colorgram.extract(img,10)
-    rgb = []
     for i in range(len(colors)):
         color = colors[i]
         values = color.rgb
@@ -41,7 +43,6 @@ def image_display(pic):
         green = values[1]
         blue = values[2]
         rgb.append((red,green,blue))
-    hls = []
     for i in range(len(colors)):
         color = colors[i]
         values = color.hsl
@@ -49,35 +50,34 @@ def image_display(pic):
         light = values[1]
         saturation = values[2]
         hls.append((hue,saturation,light))
-    hex_0 = []
     for i in rgb:
         hex_0.append('#%02x%02x%02x' % i)
 
-    #Alternate shades:
-    new_rgb = []
-    hex_1 = []
-    @st.cache(suppress_st_warning=True)
-    def color_change(hls,hue_val,light_val,sat_val,num_colors):
-        for i,x in enumerate(hls): 
-            hls_div = tuple(h/255 for h in hls[i])
-            rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
-                                          hls_div[1]*light_val,
-                                          hls_div[2]*sat_val)
-            rgb_test = tuple(r*255 for r in rgb_div)
-            rgb_test = list(rgb_test)
-            for i, x in enumerate(rgb_test):
-                x = int(x)
-                rgb_test[i] = abs(x)
-            rgb_test = tuple(rgb_test)
-            new_rgb.append(rgb_test)
-        for i in new_rgb:
-            hex_1.append('#%02x%02x%02x' % i)
-        og = sns.palplot(hex_0[:num_colors])
-        st.write('original colors')
-        st.pyplot(og)
-        new = sns.palplot(hex_1[:num_colors])
-        st.write('hue shift')
-        st.pyplot(new)
-    color_change(hls,0.5,1,1,6)
+#Alternate shades:
+new_rgb = []
+hex_1 = []
+@st.cache(suppress_st_warning=True)
+def color_change(hls,hue_val,light_val,sat_val,num_colors):
+    for i,x in enumerate(hls): 
+        hls_div = tuple(h/255 for h in hls[i])
+        rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
+                                      hls_div[1]*light_val,
+                                      hls_div[2]*sat_val)
+        rgb_test = tuple(r*255 for r in rgb_div)
+        rgb_test = list(rgb_test)
+        for i, x in enumerate(rgb_test):
+            x = int(x)
+            rgb_test[i] = abs(x)
+        rgb_test = tuple(rgb_test)
+        new_rgb.append(rgb_test)
+    for i in new_rgb:
+        hex_1.append('#%02x%02x%02x' % i)
+    og = sns.palplot(hex_0[:num_colors])
+    st.write('original colors')
+    st.pyplot(og)
+    new = sns.palplot(hex_1[:num_colors])
+    st.write('hue shift')
+    st.pyplot(new)
     
 image_display(choice)
+color_change(hls,0.5,1,1,6)
