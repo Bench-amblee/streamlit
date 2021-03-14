@@ -71,7 +71,6 @@ def image_display(pic):
             new_rgb.append(rgb_test)
         for i in new_rgb:
             hex_1.append('#%02x%02x%02x' % i)
-        @st.cache(suppress_st_warning=True)
         og = sns.palplot(hex_0[:num_colors])
         st.write('original colors')
         st.pyplot(og)
@@ -79,5 +78,5 @@ def image_display(pic):
         st.write('hue shift')
         st.pyplot(new)
     color_change(hls,0.5,1,1,6)
-
+@st.cache(suppress_st_warning=True)
 image_display(choice)
