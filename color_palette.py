@@ -2,6 +2,7 @@ from PIL import Image
 from collections import Counter
 from PIL import Image
 from urllib.request import urlopen
+import random
 import seaborn as sns
 import colorgram
 import colorsys
@@ -13,14 +14,21 @@ image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
-random = Image.open(urlopen(random_url))
+random_image = Image.open(urlopen(random_url))
 
-images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image}
 
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
 
 choice = st.selectbox('select an image or upload your own (coming soon!',['forest','sunset','coffee','random'])
+if choice == 'random':
+    if st.button('New Image'):
+        random_url = random_url[:len(random_url)-1]
+        x = random.randint(1,9)
+        random_url += str(x)
+    else:
+        random_url = random_url
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
