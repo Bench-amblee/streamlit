@@ -56,7 +56,27 @@ def image_display(pic):
 #Alternate shades:
 new_rgb = []
 hex_1 = []
-def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
+def palette(hls,hue_val,light_val,sat_val,num_colors,string):
+    for i,x in enumerate(hls): 
+        hls_div = tuple(h/255 for h in hls[i])
+        rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
+                                      hls_div[1]*light_val,
+                                      hls_div[2]*sat_val)
+        rgb_test = tuple(r*255 for r in rgb_div)
+        rgb_test = list(rgb_test)
+        for i, x in enumerate(rgb_test):
+            x = int(x)
+            rgb_test[i] = abs(x)
+        rgb_test = tuple(rgb_test)
+        new_rgb.append(rgb_test)
+    for i in new_rgb:
+        
+        hex_1.append('#%02x%02x%02x' % i)
+    og = sns.palplot(hex_0[:num_colors])
+    st.write(string)
+    st.pyplot(og)
+
+def color_palette(hls,hue_val,light_val,sat_val,num_colors,string):
     for i,x in enumerate(hls): 
         hls_div = tuple(h/255 for h in hls[i])
         rgb_div = colorsys.hls_to_rgb(hls_div[0]*hue_val,
@@ -75,10 +95,7 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     og = sns.palplot(hex_1[:num_colors])
     st.write(string)
     st.pyplot(og)
-    #new = sns.palplot(hex_1[:num_colors])
-    #st.write('hue shift')
-    #st.pyplot(new)
     
 image_display(choice)
-color_change(hls,1,1,1,6,'original colors')
+palette(hls,1,1,1,6,'original colors')
 color_change(hls,2,1,1,6,'green hue colors')
