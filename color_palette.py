@@ -70,6 +70,7 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
         rgb_test = tuple(rgb_test)
         new_rgb.append(rgb_test)
     for i in new_rgb:
+        
         hex_1.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_1[:num_colors])
     st.write(string)
@@ -79,5 +80,5 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     #st.pyplot(new)
     
 image_display(choice)
-color_change(hls,1,1,1,3,'original colors')
-color_change(hls,0.5,1,1,3,'green hue colors')
+color_change(hls,1,1,1,6,'original colors')
+color_change(hls,1,1.5,1,6,'green hue colors')
