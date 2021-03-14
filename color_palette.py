@@ -20,7 +20,7 @@ images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random}
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
 
-choice = st.selectbox('select an image or upload your own (coming soon!',['forest','sunset','coffee'])
+choice = st.selectbox('select an image or upload your own (coming soon!',['forest','sunset','coffee','random'])
 def image_display(pic):
     st.image(images[pic])
     img = images[pic]
