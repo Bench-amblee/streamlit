@@ -98,4 +98,4 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
 
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
-color_change(hls,1,1.2,1,6,'light palette')
+color_change(hls,1,1.2,0.8,6,'light palette')
