@@ -97,5 +97,6 @@ def color_change(hls,hue_val,light_val,sat_val,num_colors,string):
     st.pyplot(og)
 
 image_display(choice)
-palette(hls,1,1,1,6,'original colors')
-color_change(hls,0.5,1,1,6,'green hue colors')
+palette(hls,1,1,1,6,'original color palette')
+hue_x = st.slider('adjust the hue')
+color_change(hls,hue_x,1,1,6,'new palette')
