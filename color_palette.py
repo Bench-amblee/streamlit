@@ -34,6 +34,7 @@ if choice == 'upload':
     if uploaded_file is not None:
         uploaded_file = Image.open(uploaded_file)
         images['upload'] = uploaded_file
+    else: uploaded_file = image1
 rgb = []
 hls = []
 hex_0 = []
