@@ -15,7 +15,7 @@ image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
 random_image = Image.open(urlopen(random_url))
-uploaded_file = Image.open('images/forest.jpg')
+uploaded_file = ''
 
 images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':uploaded_file}
 
