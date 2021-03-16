@@ -13,10 +13,11 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
+white = Image.open('images/white.jpg')
 random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
 random_image = Image.open(urlopen(random_url))
 
-images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':image1}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
@@ -34,8 +35,8 @@ if choice == 'upload':
     if uploaded_file is not None:
         uploaded_file = Image.open(uploaded_file)
         images['upload'] = uploaded_file
-    else: uploaded_file = image1
-else: uploaded_file = image1
+    else: uploaded_file = white
+else: uploaded_file = white
 rgb = []
 hls = []
 hex_0 = []
