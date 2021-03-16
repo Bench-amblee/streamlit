@@ -16,7 +16,7 @@ image3 = Image.open('images/coffee.jpg')
 random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
 random_image = Image.open(urlopen(random_url))
 
-images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':uploaded_file}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':image1}
 
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
@@ -33,6 +33,7 @@ if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
     if uploaded_file is not None:
         uploaded_file = Image.open(uploaded_file)
+        images['upload'] = uploaded_file
 rgb = []
 hls = []
 hex_0 = []
