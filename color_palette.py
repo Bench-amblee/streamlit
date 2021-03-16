@@ -35,6 +35,7 @@ if choice == 'upload':
         uploaded_file = Image.open(uploaded_file)
         images['upload'] = uploaded_file
     else: uploaded_file = image1
+else: uploaded_file = image1
 rgb = []
 hls = []
 hex_0 = []
