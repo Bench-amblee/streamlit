@@ -32,6 +32,7 @@ if choice == 'random':
         random_url = random_url
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'],key="dc_mfup_1")
+    uploaded_file = Image.open(uploaded_file)
 rgb = []
 hls = []
 hex_0 = []
