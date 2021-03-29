@@ -86,7 +86,7 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     st.pyplot(og)
 
 image_display(choice)
-palette(hls,1,1,1,6,'original color palette')
-st.title('Hex Values')
+palette(hls,1,1,1,6,'riginal color palette')
+st.title('hex values:')
 for i in range(6):
     st.write(i+1,':',hex_0[i])
