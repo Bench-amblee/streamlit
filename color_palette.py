@@ -85,4 +85,4 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
 
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
-st.write(hex_0[:6].values)
+st.write(rgb[:6])
