@@ -86,8 +86,5 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
 st.title('Hex Values')
-hex_val = []
-for i in hex_0:
-    x = i.strip('"')
-    hex_val.append(x)
-st.write(hex_val[:6])
+for i in range(6):
+    st.write(i+1,':',hex_0[i)
