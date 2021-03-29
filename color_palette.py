@@ -87,9 +87,12 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
 
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
-fig,ax = plt.subplots()
-ax.set_facecolor("#99c2ff") 
+fig,ax = plt.subplots(figsize=(10,10)))
+ax.set_facecolor("#99c2ff")
+plt.axis('off')
 st.pyplot(fig)
+ax.text(3, 8, 'boxed italics text in data coords',
+        bbox={'facecolor': 'white', 'alpha': 0.5, 'pad': 10})
 st.title('hex values:')
 for i in range(6):
     st.write(i+1,':',hex_0[i])
