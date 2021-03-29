@@ -85,4 +85,7 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
 
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
-st.write(rgb[:6])
+st.title('Hex Values')
+hex_index = [1,2,3,4,5,6]
+hex_0.set_index(hex_index)
+st.write(hex_0[:6])
