@@ -80,6 +80,7 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     for i in new_rgb_1:
         hex_1.append('#%02x%02x%02x' % i)
     og = sns.palplot(hex_1[:num_colors])
+    plt.style.use("dark_background")
     st.write(string)
     st.pyplot(og)
 
