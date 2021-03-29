@@ -92,7 +92,7 @@ ax.set_yticklabels([])
 ax.set_xticklabels([])
 ax.set_facecolor("#99c2ff")
 ax.text(0.5, 0.5, '#99c2ff',
-        bbox={'facecolor': 'white', 'alpha'=1.0})
+        bbox={'facecolor': 'white','alpha':1.0})
 st.pyplot(fig)
 st.title('hex values:')
 for i in range(6):
