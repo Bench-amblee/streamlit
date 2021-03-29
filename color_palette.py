@@ -87,4 +87,4 @@ image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
 st.title('Hex Values')
 for i in range(6):
-    st.write(i+1,':',hex_0[i)
+    st.write(i+1,':',hex_0[i])
