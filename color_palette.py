@@ -7,6 +7,7 @@ import seaborn as sns
 import colorgram
 import colorsys
 import streamlit as st
+import matplotlib.pyplot as plt
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
