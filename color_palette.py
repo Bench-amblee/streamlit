@@ -91,7 +91,7 @@ fig,ax = plt.subplots(figsize=(5,5))
 ax.set_yticklabels([])
 ax.set_xticklabels([])
 ax.set_facecolor("#99c2ff")
-ax.text(2.5, 2.5, '#99c2ff',
+ax.text(1, 1, '#99c2ff',
         bbox={'facecolor': 'white', 'alpha': 0.5, 'pad': 10})
 st.pyplot(fig)
 st.title('hex values:')
