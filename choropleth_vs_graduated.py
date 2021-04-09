@@ -47,16 +47,23 @@ if choice == 'Choropleth':
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
 
-if choice == 'Graduated Symbol':
+if choice == 'Graduated Symbols':
   with col1:
-    st.title('Choropleth Map')
-    chart1 = grad1
-    if st.button('Value = 50'):
-      chart1 = grad2
-    st.image(chart1)
-  with col2:
-    st.title('Graduated Symbols Map')
+    st.write('A random distribution of numbers in the range(0,10) for each state in the US')
+    st.write("see what happens when you change Texas' value to 30 or 50")
     chart2 = grad1
-    if st.button('Graduated Value = 50'):
+    if tex_50 == True:
       chart2 = grad2
+    if tex_30 == True:
+      chart2 = grad3
+    if tex_reset == True:
+      chart2 = grad1
     st.image(chart2)
+  with col2:
+    st.title('Graduated Sybmols Map')
+    st.write("Graduated symbols maps use data classification to apply symbols to number ranges. The classification method that you use will depend on the data you're using and the information you want to convey on your map.")
+    st.write('They are good for: ')
+    st.write('- Flexibility: you can display many different types of data spatially')
+    st.write('- Easily identifying large or small outliers')
+    st.write('A disatvantage of using choropleth maps: ')
+    st.write('- Larger symbols can overlap with each other, blocking some potentially important data')
