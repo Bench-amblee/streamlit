@@ -5,7 +5,7 @@ from PIL import Image
 
 # choropleth
 chor1 = Image.open('images/chor1.png')
-chor1 = Image.open('images/chor2.png')
+chor2 = Image.open('images/chor2.png')
 #graduated_symbol
 grad1 = Image.open('images/grad1.png')
 grad2 = Image.open('images/grad2.png')
@@ -20,4 +20,4 @@ with col1:
   st.image(chor1)
 with col2:
   st.title('Graduated Symbols Map')
-  st.image(chor2)
+  st.image(grad1)
