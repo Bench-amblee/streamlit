@@ -18,6 +18,8 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.title('Choropleth Map')
   st.image(chor1)
+  st.image(chor2)
 with col2:
   st.title('Graduated Symbols Map')
   st.image(grad1)
+  st.image(grad2)
