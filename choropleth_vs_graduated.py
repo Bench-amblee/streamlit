@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
-import time
 
 # choropleth
 chor1 = Image.open('images/chor1.png')
