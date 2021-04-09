@@ -24,6 +24,6 @@ with col1:
 with col2:
   st.title('Graduated Symbols Map')
   chart2 = grad1
-  if st.button('Value = 50'):
+  if st.button('Graduated Value = 50'):
     chart2 = grad2
   st.image(chart2)
