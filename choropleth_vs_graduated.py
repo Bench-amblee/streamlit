@@ -8,9 +8,9 @@ import time
 chor1 = Image.open('images/chor1.png')
 chor2 = Image.open('images/chor2.png')
 chor3 = Image.open('images/chor3.png')
-chor_ex1 = Image.opent('images/chor_ex1.png')
-chor_ex2 = Image.opent('images/chor_ex2.png')
-chor_ex3 = Image.opent('images/chor_ex3.png')
+chor_ex1 = Image.open('images/chor_ex1.png')
+chor_ex2 = Image.open('images/chor_ex2.png')
+chor_ex3 = Image.open('images/chor_ex3.png')
 #graduated_symbol
 grad1 = Image.open('images/grad1.png')
 grad2 = Image.open('images/grad2.png')
