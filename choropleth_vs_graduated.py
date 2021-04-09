@@ -23,7 +23,7 @@ with col1:
     st.image(chor2)
 with col2:
   st.title('Graduated Symbols Map')
-    if st.button('Value = 50'):
+  if st.button('Value = 50'):
     st.image(grad1)
   else:
     st.image(grad2)
