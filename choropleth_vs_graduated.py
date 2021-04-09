@@ -23,7 +23,9 @@ with colu1:
 a1,a2,a3,a4,a5,a6 = st.beta_columns(6)
 with a1:
   tex_reset = st.button('Texas = 10')
+with a2:
   tex_30 = st.button('Texas = 30')
+with a3:
   tex_50 = st.button('Texas = 50')
 col1, col2 = st.beta_columns(2)
 
