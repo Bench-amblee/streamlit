@@ -20,7 +20,7 @@ st.title('Choropleth Maps vs Graduated Symbols Maps')
 colu1,col2,colu3 = st.beta_columns(3)
 with colu1:
   choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbol'])
-a1,a2,a3,a4,a5,a6 = st.beta_columns(6)
+a1,a2,a3,a4,a5,a6,a7,a8 = st.beta_columns(8)
 with a1:
   tex_reset = st.button('Texas = 10')
 with a2:
@@ -49,7 +49,7 @@ if choice == 'Choropleth':
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
-    st.image([chor_ex1,chor_ex2,chor_ex3])
+    st.image([chor_ex1,chor_ex2,chor_ex3],width=0.5)
 
 if choice == 'Graduated Symbol':
   with col1:
