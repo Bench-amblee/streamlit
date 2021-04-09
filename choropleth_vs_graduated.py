@@ -18,12 +18,14 @@ col1, col2 = st.beta_columns(2)
 with col1:
   st.title('Choropleth Map')
   if st.button('Value = 50'):
-    st.image(chor1)
+    chart1 = chor2
   else:
-    st.image(chor2)
+    chart1 = chor1
+  st.image(chart1)
 with col2:
-  st.title('Choropleth Map')
-  if st.button('Value = 50'):
-    st.image(grad1)
+  st.title('Graduated Symbols Map')
+    if st.button('Value = 50'):
+    chart2 = grad2
   else:
-    st.image(grad2)
+    chart2 = grad1
+  st.image(chart2)
