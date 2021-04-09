@@ -45,13 +45,7 @@ if choice == 'Choropleth':
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
-  bl1,bl2,bl3,ex1,ex2,ex3 = st.beta_columns(6)
-  with ex1:
-    st.image(chor_ex1)
-  with ex2:
-    st.image(chor_ex2)
-  with ex3:
-    st.image(chor_ex3)
+    st.image([chor_ex1,chor_ex2,chor_ex3])
 
 if choice == 'Graduated Symbol':
   with col1:
