@@ -68,3 +68,4 @@ if choice == 'Graduated Symbols':
     st.write('- Easily identifying large or small outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Larger symbols can overlap with each other, blocking some potentially important data')
+    st.write("Read more [here](https://www.gislounge.com/what-are-graduated-symbols-in-gis/)")
