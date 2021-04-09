@@ -23,9 +23,12 @@ if choice == 'Choropleth':
     st.write("A random distribution of numbers in the range(0,10) for each state, see what happens when you change Texas' value to 50")
     chart1 = chor1
     chor_button_reset = st.button('Texas = 10')
+    chor_button_2 = st.buttone('Texas = 30')
     chor_button =  st.button('Texas = 50')
     if chor_button == True:
       chart1 = chor2
+    #if chor_buttone_2 == True:
+      #chart1 = chor3
     if chor_button_reset == True:
       chart1 = chor1
     st.image(chart1)
