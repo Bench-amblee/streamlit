@@ -20,6 +20,11 @@ st.title('Choropleth Maps vs Graduated Symbols Maps')
 colu1,col2,colu3 = st.beta_columns(3)
 with colu1:
   choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbol'])
+a1,a2,a3,a4,a5,a6 = st.beta_columns(6)
+with a1:
+  tex_reset = st.button('Texas = 10')
+  tex_30 = st.button('Texas = 30')
+  tex_50 = st.button('Texas = 50')
 col1, col2 = st.beta_columns(2)
 
 if choice == 'Choropleth':
@@ -27,14 +32,11 @@ if choice == 'Choropleth':
     st.write('A random distribution of numbers in the range(0,10) for each state in the US')
     st.write("see what happens when you change Texas' value to 30 or 50")
     chart1 = chor1
-    chor_button_reset = st.button('Texas = 10')
-    chor_button_2 = st.button('Texas = 30')
-    chor_button =  st.button('Texas = 50')
-    if chor_button == True:
+    if tex_50 == True:
       chart1 = chor2
-    if chor_button_2 == True:
+    if tex_30 == True:
       chart1 = chor3
-    if chor_button_reset == True:
+    if tex_reset == True:
       chart1 = chor1
     st.image(chart1)
   with col2:
@@ -45,7 +47,7 @@ if choice == 'Choropleth':
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
-    st.image([chor_ex1,chor_ex2,chor_ex3],width=2)
+    st.image([chor_ex1,chor_ex2,chor_ex3])
 
 if choice == 'Graduated Symbol':
   with col1:
