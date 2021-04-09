@@ -20,8 +20,10 @@ col1, col2 = st.beta_columns(2)
 
 if choice == 'Choropleth':
   with col1:
+    st.write("A random distribution of numbers in the range(0,10) for each state, see what happens when you change Texas' value to 50')
     chart1 = chor1
-    if st.button('Value = 50'):
+    chor_button =  st.button('Texas = 50'):
+    if chor_button = True:
       chart1 = chor2
     st.image(chart1)
   with col2:
@@ -31,7 +33,7 @@ if choice == 'Choropleth':
     st.write('- displaying large amounts of data across large spatial extents')
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
-    st.write('choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
+    st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
 
 if choice == 'Graduated Symbol':
   with col1:
