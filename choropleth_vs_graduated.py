@@ -13,7 +13,7 @@ grad2 = Image.open('images/grad2.png')
 
 st. set_page_config(layout="wide")
 st.title('Choropleth Maps vs Graduated Symbols Maps')
-time.sleep(1)
+time.sleep(5)
 col1, col2 = st.beta_columns(2)
 
 with col1:
