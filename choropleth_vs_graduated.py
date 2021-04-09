@@ -13,8 +13,9 @@ grad2 = Image.open('images/grad2.png')
 
 st. set_page_config(layout="wide")
 st.title('Choropleth Maps vs Graduated Symbols Maps')
-
-choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbol'])
+colu1,col2,colu3 = st.beta_columns(3)
+with colu1:
+  choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbol'])
 col1, col2 = st.beta_columns(2)
 
 if choice == 'Choropleth':
