@@ -43,7 +43,7 @@ if choice == 'Choropleth':
     st.title('Choropleth Map')
     st.write('Choropleth maps are data maps that use differences in shading/coloring within predefined areas to indicate the average values of a property or quantity in those areas.')
     st.write('They are good for: ')
-    st.write('- displaying large amounts of data across large spatial extents')
+    st.write('- Displaying large amounts of data across large spatial extents')
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
