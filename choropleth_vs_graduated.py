@@ -29,7 +29,7 @@ if choice == 'Choropleth':
     chor_button =  st.button('Texas = 50')
     if chor_button == True:
       chart1 = chor2
-    if chor_buttone_2 == True:
+    if chor_button_2 == True:
       chart1 = chor3
     if chor_button_reset == True:
       chart1 = chor1
