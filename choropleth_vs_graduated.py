@@ -47,7 +47,7 @@ if choice == 'Choropleth':
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
-    st.write("Read more here [link](https://datavizcatalogue.com/methods/choropleth.html)")
+    st.write("Read more [here](https://datavizcatalogue.com/methods/choropleth.html)")
 if choice == 'Graduated Symbols':
   with col1:
     st.write('A random distribution of numbers in the range(0,10) for each state in the US')
