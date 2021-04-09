@@ -8,6 +8,9 @@ import time
 chor1 = Image.open('images/chor1.png')
 chor2 = Image.open('images/chor2.png')
 chor3 = Image.open('images/chor3.png')
+chor_ex1 = Image.opent('images/chor_ex1.png')
+chor_ex2 = Image.opent('images/chor_ex2.png')
+chor_ex3 = Image.opent('images/chor_ex3.png')
 #graduated_symbol
 grad1 = Image.open('images/grad1.png')
 grad2 = Image.open('images/grad2.png')
@@ -43,6 +46,13 @@ if choice == 'Choropleth':
     st.write('- Easily identifying outliers')
     st.write('A disatvantage of using choropleth maps: ')
     st.write('- Choosing a different boundary, for example county lines vs. state senate districts, could imply completely different spatial relationships')
+    ex1,ex2,ex3 = st.beta_columns(3)
+    with ex1:
+      st.image(chor_ex1)
+    with ex2:
+      st.image(chor_ex2)
+    with ex3:
+      st.image(chor_ex3)
 
 if choice == 'Graduated Symbol':
   with col1:
