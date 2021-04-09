@@ -1,7 +1,3 @@
-[theme]
-
-# Primary accent for interactive elements
-primaryColor = '#7792E3'
 
 import streamlit as st
 import pandas as pd
