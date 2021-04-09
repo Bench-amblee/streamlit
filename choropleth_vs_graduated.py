@@ -16,7 +16,7 @@ st. set_page_config(layout="wide")
 st.title('Choropleth Maps vs Graduated Symbols Maps')
 colu1,col2,colu3 = st.beta_columns(3)
 with colu1:
-  choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbol'])
+  choice = st.selectbox('select a type of map to view',['Choropleth','Graduated Symbols'])
 a1,a2,a3,a4,a5,a6,a7 = st.beta_columns(7)
 with a1:
   tex_reset = st.button('Texas = 10')
