@@ -13,7 +13,7 @@ from datetime import date
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(layout="wide")
 
-gandikota_historical = pd.read_csv('Data/gandikota_historical.csv')
+gandikota_historical = pd.read_csv('Data/gandikota_historical_2020.csv')
 solar_model = pickle.load(open('solar_power_prediction_model.sav', 'rb'))
 
 datetimefix = [x[:-10] for x in gandikota_historical['dt_iso']]
