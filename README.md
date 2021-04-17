@@ -4,7 +4,7 @@ collection of sites made using the streamlit library
 **Color Palette Generator**:   
 https://share.streamlit.io/bench-amblee/streamlit/main/color_palette.py     
 
-**Choropleth vs Graduated Symbol Maps**:   #Not Active 
+**Choropleth vs Graduated Symbol Maps**:   #Not Active     
 https://share.streamlit.io/bench-amblee/streamlit/main/choropleth_vs_graduated.py
 
 **Solar Power Generation**:    
