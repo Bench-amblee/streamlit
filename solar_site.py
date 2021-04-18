@@ -96,13 +96,19 @@ NOCT = 18.35
 mod_temp = amb_temp + ((NOCT - 20)/80)*irr_level
 DC_power = mod_temp*0.102*22*4*6.7
 DC_power = round(DC_power,2)
-if today.hour < 6:
+if (today.hour + 6) <= 6:
+    DC_power = 0
+if today.hour + 6) >= 28:
     DC_power = 0
 
 NOCT_up = 48
 mod_temp_up = amb_temp + ((NOCT_up - 20)/80)*irr_level
 DC_power_up = mod_temp_up*0.102*22*4*6.7
 DC_power_up = round(DC_power_up,2)
+if (today.hour + 6) <= 6:
+    DC_power_up = 0
+if today.hour + 6) >= 28:
+    DC_power_up = 0
 
 day_2020_power = [5051785.113912312,4051785.113912312,3953248.619863199,3953248.619863199,3953248.619863199,3946764.757484612,3944860.715063337,3677377.138865228,3667256.042065976,
                   3667256.042065976,3667256.042065976,3667256.042065976,3677377.138865228,3677377.138865228,3946764.757484612,3951477.23527434,3951477.23527434,3953248.619863199,
@@ -166,7 +172,6 @@ with col1:
     st.write('The solar irradiance is currently',(100-current_weather['clouds']['all']),'%')
     st.write('The Gandikota Solar Power Plant is currently generating ',DC_power,'kW/hrs')
     st.write('If the Gandikota Power Plant had upgraded solar panels they would be generating,',DC_power_up,'kW/hrs')
-    st.write(today.hour)
     weather_today(today.month,today.day)
 with col2:
     st.markdown("![solar panels](https://media.giphy.com/media/LPZtw1JynGuTIEcDVS/giphy.gif)")
