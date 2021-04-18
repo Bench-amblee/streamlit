@@ -96,6 +96,8 @@ NOCT = 18.35
 mod_temp = amb_temp + ((NOCT - 20)/80)*irr_level
 DC_power = mod_temp*0.102*22*4*6.7
 DC_power = round(DC_power,2)
+if today.hour < 6:
+    DC_power = 0
 
 NOCT_up = 48
 mod_temp_up = amb_temp + ((NOCT_up - 20)/80)*irr_level
