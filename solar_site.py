@@ -166,7 +166,7 @@ with col1:
     st.write('The solar irradiance is currently',(100-current_weather['clouds']['all']),'%')
     st.write('The Gandikota Solar Power Plant is currently generating ',DC_power,'kW/hrs')
     st.write('If the Gandikota Power Plant had upgraded solar panels they would be generating,',DC_power_up,'kW/hrs')
-    wt.write(today.hour)
+    st.write(today.hour)
     weather_today(today.month,today.day)
 with col2:
     st.markdown("![solar panels](https://media.giphy.com/media/LPZtw1JynGuTIEcDVS/giphy.gif)")
