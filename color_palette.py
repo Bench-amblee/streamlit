@@ -1,6 +1,4 @@
 from PIL import Image
-from collections import Counter
-from PIL import Image
 from urllib.request import urlopen
 import random
 import seaborn as sns
