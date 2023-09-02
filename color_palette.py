@@ -16,7 +16,7 @@ white = Image.open('images/white.jpg')
 random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
 random_image = Image.open(urlopen(random_url))
 
-images = {'Forest': image1,'Sunset':image2,'Coffee':image3,'Random':random_image,'Upload':white}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
 st.title('Image Palette Generator')
 st.write('select an image below, a color palette based on the most prominent colors will generate below')
