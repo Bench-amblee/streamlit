@@ -18,6 +18,7 @@ random_image = Image.open(urlopen(random_url))
 
 images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
+# title 
 st.title('Image Palette Generator')
 st.write('select an image, a color palette based on the most prominent colors will generate below')
 
