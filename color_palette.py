@@ -19,7 +19,7 @@ random_image = Image.open(urlopen(random_url))
 images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
 st.title('Image Palette Generator')
-st.write('select an image below, a color palette based on the most prominent colors will generate below')
+st.write('select an image, a color palette based on the most prominent colors will generate below')
 
 choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
 if choice == 'random':
