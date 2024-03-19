@@ -19,7 +19,7 @@ random_image = Image.open(urlopen(random_url))
 images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
 # title 
-st.title('Image Palette Generator')
+st.title('Color Palette Generator')
 st.write("Created by Ben Chamblee [Github](https://github.com/Bench-amblee/streamlit/edit/main/color_palette.py)")
 st.write('select an image, a color palette based on the most prominent colors will generate below')
 
