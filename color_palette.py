@@ -27,17 +27,19 @@ st.write('select an image, a color palette based on the most prominent colors wi
 
 #choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
-choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','random','upload'])
+#choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
-'''
-if choice == 'random':
-    if st.button('New Image'):
-        random_url = random_url[:len(random_url)-1]
-        x = random.randint(1,9)
-        random_url += str(x)
-    else:
-        random_url = random_url
-'''
+choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
+
+
+#if choice == 'random':
+    #if st.button('New Image'):
+        #random_url = random_url[:len(random_url)-1]
+        #x = random.randint(1,9)
+        #random_url += str(x)
+    #else:
+        #random_url = random_url
+
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
     if uploaded_file is not None:
