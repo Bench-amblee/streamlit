@@ -13,17 +13,23 @@ image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
-random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
+#random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
 random_image = Image.open(urlopen(random_url))
 
-images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
+#images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
+
+images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white}
 
 # title 
 st.title('Color Palette Generator')
 st.write("Created by Ben Chamblee [Github](https://github.com/Bench-amblee/streamlit/edit/main/color_palette.py)")
 st.write('select an image, a color palette based on the most prominent colors will generate below')
 
-choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
+#choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
+
+choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','random','upload'])
+
+'''
 if choice == 'random':
     if st.button('New Image'):
         random_url = random_url[:len(random_url)-1]
@@ -31,6 +37,7 @@ if choice == 'random':
         random_url += str(x)
     else:
         random_url = random_url
+'''
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
     if uploaded_file is not None:
