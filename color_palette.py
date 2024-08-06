@@ -15,7 +15,7 @@ image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
 
-access_key = st.secrets("ACCESS_KEY")
+access_key = st.secrets["ACCESS_KEY"]
 
 url = "https://api.unsplash.com/photos/random"
 
