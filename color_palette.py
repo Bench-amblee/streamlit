@@ -49,7 +49,8 @@ rgb = []
 hls = []
 hex_0 = []
 def image_display(pic):
-    st.image(images[pic],width=600)
+    display_img = images[pic].resize((600,400))
+    st.image(display_img)
     img = images[pic]
     colors = colorgram.extract(img,10)
     for i in range(len(colors)):
