@@ -6,7 +6,7 @@ import colorgram
 import colorsys
 import streamlit as st
 import matplotlib.pyplot as plt
-import unsplash
+import requests
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -16,9 +16,21 @@ image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
 
 access_key = st.secrets("ACCESS KEY")
-secret_key = st.secrets("SECRET KEY")
 
-unsplash_api = unsplash.Api(access_key=access_key, secret_key=secret_key)
+url = "https://api.unsplash.com/photos/random"
+
+headers = {
+    "Authorization": f"Client-ID {access_key}"
+}
+if response.status_code == 200:
+    data = response.json()
+    random_url = data['urls']['regular']  # You can choose 'raw', 'full', 'small', etc.
+else:
+    print(f"Error: {response.status_code}, {response.text}")
+    
+response = requests.get(url, headers=headers)
+
+
 random_image = unsplash_api.photo.random()
 
 images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
@@ -39,9 +51,12 @@ choice = st.selectbox('select an image, generate a random image, or upload your 
 
 if choice == 'random':
     if st.button('New Image'):
-        random_image = unsplash_api.photo.random()
+        random_url = random_url[:len(random_url)-1]
+        x = random.randint(1,9)
+        random_url += str(x)
     else:
-        random_image = random_image
+        random_url = random_url
+'''
 
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
