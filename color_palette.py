@@ -56,7 +56,6 @@ if choice == 'random':
         random_url += str(x)
     else:
         random_url = random_url
-'''
 
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
