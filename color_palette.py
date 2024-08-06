@@ -6,6 +6,7 @@ import colorgram
 import colorsys
 import streamlit as st
 import matplotlib.pyplot as plt
+import unsplash
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -13,32 +14,34 @@ image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
-#random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
-#random_image = Image.open(urlopen(random_url))
 
-#images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
+access_key = st.secrets("ACCESS KEY")
+secret_key = st.secrets("SECRET KEY")
 
-images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white}
+unsplash_ api = unsplash.Api(access_key=access_key, secret_key=secret_key)
+random_image = unsplash_api.photo.random()
+
+images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
+
+#images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white}
 
 # title 
 st.title('Color Palette Generator')
 st.write("Created by Ben Chamblee [Github](https://github.com/Bench-amblee/streamlit/edit/main/color_palette.py)")
 st.write('select an image, a color palette based on the most prominent colors will generate below')
 
-#choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
+choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
 #choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
-choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
+#choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
 
 
-#if choice == 'random':
-    #if st.button('New Image'):
-        #random_url = random_url[:len(random_url)-1]
-        #x = random.randint(1,9)
-        #random_url += str(x)
-    #else:
-        #random_url = random_url
+if choice == 'random':
+    if st.button('New Image'):
+        random_image = unsplash_api.photo.random()
+    else:
+        random_image = random_image
 
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
