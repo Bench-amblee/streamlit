@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageTk
 from urllib.request import urlopen
 import random
 import seaborn as sns
@@ -15,27 +15,16 @@ image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
 
-access_key = st.secrets["ACCESS_KEY"]
+def display_image():
+    # make a request to the Unsplash API to get a random image
+    url = f"https://api.unsplash.com/photos/random?&orientation=landscape&client_id=1n7sSMtCh8Hs_MrBOjhQ1SygTDA-BJ550UdX3rwLYZQ"
+    data = requests.get(url).json()
+    img_data = requests.get(data["urls"]["regular"]).content
 
-url = "https://api.unsplash.com/photos/random"
+    photo = ImageTk.PhotoImage(Image.open(io.BytesIO(img_data)).resize((600, 400), resample=Image.LANCZOS))
+    return photo
 
-headers = {
-    "Authorization": f"Client-ID {access_key}"
-}
-if response.status_code == 200:
-    data = response.json()
-    random_url = data['urls']['regular']  # You can choose 'raw', 'full', 'small', etc.
-else:
-    print(f"Error: {response.status_code}, {response.text}")
-    
-response = requests.get(url, headers=headers)
-
-
-random_image = unsplash_api.photo.random()
-
-images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
-
-#images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white, 'random':display_image}
 
 # title 
 st.title('Color Palette Generator')
@@ -48,14 +37,6 @@ choice = st.selectbox('select an image, generate a random image, or upload your 
 
 #choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
 
-
-if choice == 'random':
-    if st.button('New Image'):
-        random_url = random_url[:len(random_url)-1]
-        x = random.randint(1,9)
-        random_url += str(x)
-    else:
-        random_url = random_url
 
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
