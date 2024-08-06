@@ -1,6 +1,5 @@
 from PIL import Image
 from urllib.request import urlopen
-from urlib import request
 import random
 import seaborn as sns
 import colorgram
