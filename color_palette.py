@@ -1,4 +1,4 @@
-from PIL import Image, ImageTk
+from PIL import Image
 from urllib.request import urlopen
 import random
 import seaborn as sns
@@ -6,7 +6,6 @@ import colorgram
 import colorsys
 import streamlit as st
 import matplotlib.pyplot as plt
-import requests
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -14,29 +13,32 @@ image1 = Image.open('images/forest.jpg')
 image2 = Image.open('images/sunset.jpg')
 image3 = Image.open('images/coffee.jpg')
 white = Image.open('images/white.jpg')
+#random_url = "https://source.unsplash.com/random/1920x1080?sig=1"
+#random_image = Image.open(urlopen(random_url))
 
-def display_image():
-    # make a request to the Unsplash API to get a random image
-    url = f"https://api.unsplash.com/photos/random?&orientation=landscape&client_id=1n7sSMtCh8Hs_MrBOjhQ1SygTDA-BJ550UdX3rwLYZQ"
-    data = requests.get(url).json()
-    img_data = requests.get(data["urls"]["regular"]).content
+#images = {'forest': image1,'sunset':image2,'coffee':image3,'random':random_image,'upload':white}
 
-    photo = ImageTk.PhotoImage(Image.open(io.BytesIO(img_data)).resize((600, 400), resample=Image.LANCZOS))
-    return photo
-
-images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white, 'random':display_image}
+images = {'forest': image1,'sunset':image2,'coffee':image3,'upload':white}
 
 # title 
 st.title('Color Palette Generator')
 st.write("Created by Ben Chamblee [Github](https://github.com/Bench-amblee/streamlit/edit/main/color_palette.py)")
 st.write('select an image, a color palette based on the most prominent colors will generate below')
 
-choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
+#choice = st.selectbox('select an image, generate a random image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
 #choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','random','upload'])
 
-#choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
+choice = st.selectbox('select an image, or upload your own:',['forest','sunset','coffee','upload'])
 
+
+#if choice == 'random':
+    #if st.button('New Image'):
+        #random_url = random_url[:len(random_url)-1]
+        #x = random.randint(1,9)
+        #random_url += str(x)
+    #else:
+        #random_url = random_url
 
 if choice == 'upload':
     uploaded_file = st.file_uploader("Choose Files ", type=['png','jpg','JPG','PNG'])
@@ -97,3 +99,4 @@ palette(hls,1,1,1,6,'original color palette')
 st.title('hex values:')
 for i in range(6):
     st.write(i+1,':',hex_0[i])
+    
