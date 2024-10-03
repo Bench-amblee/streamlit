@@ -6,7 +6,6 @@ import colorgram
 import colorsys
 import streamlit as st
 import matplotlib.pyplot as plt
-import matplot.cm
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
