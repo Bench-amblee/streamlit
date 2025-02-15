@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Load API key from .env file
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_APIKEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Streamlit UI
 st.title("RFP AI Assistant - MVP")
@@ -21,14 +21,14 @@ uploaded_file = st.file_uploader("Upload an RFP document (PDF/TXT)", type=["txt"
 # Function to extract text from PDF
 def extract_text_from_pdf(pdf_file):
     text = ""
-    with fitz.open(pdf_file) as doc:
+    with fitz.open(stream=pdf_file.read(), filetype="pdf") as doc:
         for page in doc:
             text += page.get_text("text") + "\n"
     return text
 
 if uploaded_file:
     file_content = ""
-    
+
     # Handle TXT and PDF files separately
     if uploaded_file.type == "text/plain":
         file_content = uploaded_file.read().decode("utf-8")
@@ -49,10 +49,10 @@ if uploaded_file:
 
             Generate a professional response.
             """
-            response = openai.ChatCompletion.create(
+            response = openai.chat.completions.create(
                 model="gpt-4",
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.7
             )
             st.subheader("AI-Generated Response")
-            st.write(response["choices"][0]["message"]["content"])
+            st.write(response.choices[0].message.content)
