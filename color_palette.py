@@ -121,16 +121,16 @@ def palette(hls,hue_val,light_val,sat_val,num_colors,string):
     for i in new_rgb_1:
         hex_1.append('#%02x%02x%02x' % i)
     
-    # Fixed plotting for newer Streamlit
-    fig, ax = plt.subplots(figsize=(10, 2))
+    # Fixed plotting for newer Streamlit and older seaborn
+    plt.figure(figsize=(10, 2))
     plt.style.use("dark_background")
     
-    # Create the color palette plot
-    sns.palplot(hex_1[:num_colors], ax=ax)
+    # Create the color palette plot (palplot doesn't accept ax parameter in seaborn 0.11.1)
+    sns.palplot(hex_1[:num_colors])
     
     st.write(string)
-    st.pyplot(fig)  # Pass the figure object
-    plt.close(fig)  # Clean up
+    st.pyplot(plt.gcf())  # Get current figure
+    plt.clf()  # Clear the figure
 
 image_display(choice)
 palette(hls,1,1,1,6,'original color palette')
